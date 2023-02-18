@@ -16,13 +16,14 @@ def choices():
     first_person = all_Particepent_data[random_num()]
     second_person = all_Particepent_data[random_num()+1]
     return first_person, second_person
-
+def print_fun(acoount):
+  return f"{acoount['name']} a {acoount['description']}, from {acoount['country']}. Cheat {acoount['follower_count']}"
 
 def userChosen():
     abc = choices()
-    print(f"Compare A:{abc[0]['name']} , a {abc[0]['description']}, from {abc[0]['country']}. Cheat {abc[0]['follower_count']}")
+    print(f"Compare A:{print_fun(abc[0])}")
     print(art.vs)
-    print(f"Against B:{abc[1]['name']} , a {abc[1]['description']}, from {abc[1]['country']}. Cheet {abc[1]['follower_count']}")
+    print(f"Against B:{print_fun(abc[1])}")
     Choice = input(" Who has more followers? Type 'A' or 'B': ").upper()
     new_lists = {"A": abc[0]["follower_count"], "B": abc[1]["follower_count"]}
     if Choice == "A":
